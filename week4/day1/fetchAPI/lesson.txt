@@ -18,7 +18,7 @@ So what is it we're getting here? We are fetching a JSON file from a server.
 
 We return a promise which needs to be resolved!
 
-The json() method is an asynchronous method that returns a second promise, which resolves with the parsed JSON content.
+The json() method is an asynchronous method that returns a second promise (BECAUSE IT TAKES TIME TO CONVERT JSON!), which resolves with the parsed JSON content.
 
 
 And to do this, of course, we chain on a .then() to consume our promise.

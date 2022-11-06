@@ -36,6 +36,8 @@ Let's see what happens if we want to pass all these callbacks inside each other 
 
 This is known as callback hell. Code is a nightmare!
 
+I'll mention as well that our lovely vs code colours are actually quite a new development in the world of code, until quite recently devs would often be looking at white code on a black background, and also not looking at their own code even, but someone elses that they now have to work on!
+
 //////////////////////////////////
 
 Promises are basically there to solve this issue of callback hell and to make it easier to schedule events.
@@ -103,6 +105,17 @@ This can be done using the Promise.all() method. This method is used for aggrega
 The Promise.all() method takes an array of promises as an argument. It returns a single Promise that resolves when all the promises in the array argument have been resolved.
 
 As you can see, even though we've got setTimeout on everything, we're getting the whole array in our console at once!
+
+
+Real world example: imagine I have an online shop.  Even though that's my online shop, I jut resell things that I've ordered from other places.
+
+Let's say I have three different DBs, one with everything about my user (purchase history id's etc), one with information about my supply chain.
+
+On user's object i see that there is one order from one supply chain, one from another supply chain.
+
+My own db is fast, but I know that the other isn't.  
+
+I don't want a user to open his purchase history and have things loading at different rates, so I wait until all my different promises are resolved until I show him everything.
 
 
 
