@@ -1,0 +1,31 @@
+So now we'll talk a little bit about what node is.
+
+Node is something that is a bit hard to explain, but it's one of the most important tools we'll have used by the end of this course and from this point basically everything you work on will be build on top of node.
+
+
+It seems hard now to think of Javascript as anything other than the language that the whole internet runs on, but before node was introduced in 2009, to communicate with servers etc, JS was used only on the client side, i.e. in the browser.  So you had HTML to get the elements on the page, CSS to make it look pretty, and Javascript to make the elements you have to introduce some interactivity.  You needed to use other languages to actually communicate with a backend(server).
+
+What node did, and does, is to let you run javascript outside of browsers, INCLUDING on web servers.
+
+
+To summarize, before Node, the only place where you could use JavaScript was a client-side environment - the browsers. Thanks to Node, we can use JS in the backend side as well (aka, the server-side), and this makes us, as JavaScript developers, full-stack developers. So thanks, Node. ❤️
+
+We're not going deep into how machines work, and how they process programming languages, but for the time being we'll just say that machines don't natively understand programming languages.  It has to be translated into 1s and 0s.
+
+Node is not a language but a runtime environment.
+
+A runtime environment is an environment that includes all of the tools and features needed to run a specific program, or in the case of NodeJS, a programming language.
+
+Important bit is :  Node js translates a JavaScript program into bytecode for computers to understand it and to run it.
+
+*** check understanding of this bit!
+
+Our usage of NodeJS
+In this course, we will use Node at first to learn some new features of JavaScript, and write some more complex JavaScript algorithms.
+
+Later on, we will use Node as a web server (we will be talking about servers soon), and we will use a web framework built on top of Node and it's sexy brother ExpressJS.
+
+
+************* onto the node.js installation
+
+

@@ -1,0 +1,69 @@
+This lesson is a follow on from our work earlier on Promises.
+
+In this lesson we will look at the Async and Await keywords.
+
+Basically, the async and await keywords give us a syntax for working with promises.  What they do is basically allow us to delay code from being executed until we want it to.
+
+Imagine you need to call your bank for some reason or another. As always, you get a message telling you that they're experience higher than average call volume. At this point, one of two things can happen: 1) you sit there on hold doing nothing else because you don't want to miss the guy when he finally answers, or 2) the automated system offers to call you back when someone is available, and you hang up and go do other stuff.
+
+
+The syntax can seem a bit confusing at first because unlike normal functions, we are going to be returning promises rather than definite values.
+
+*** At this stage ask the class to remind us of what we do once we have created a promise?
+
+- Dive into code.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+First stage is to look at the actual syntax of a promise (line 3)
+
+Second, we will look at how we introduce the await keyword.  First though, we'll create our own promise to work with (line 16)
+
+We are emulating code that takes time to execute by using a timeout function!
+
+REMEMBER IT RETURNS A PROMISE!!!!
+
+So, when consuming this promise, we use the await keyword! (line 24)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Next we'll think about how we could deal with multiple asynchronous operations at once.  Look at the example on (line 40)
+
+Again, we've created out own promise, this time dealing with an array created above.
+
+As you can see, the function lists the 4 steps in order, awaiting the completion of each before (though simulated with setInterval)
+
+*** Ask class what they think will happen, i.e. what do we think will be console.log'd first, second, third etc.
+
+- At this stage it is maybe important to point out that the 'practical' application of using async/await is not yet completely clear, but when we go on to look at real world examples in the next section (i.e. using fetch API) it will be far more obvious why it is a good idea to use async/await.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Finally we'll do a bit of work on error catching when using async/await syntax.
+
+The try block is used to execute the code and await for the Promises to resolve. If an awaited Promise gets rejected or if an error is thrown, the execution of the code in the try block stops and the catch block takes over.
+
+***First we'll look at the example at (line 77) just to briefly discuss what might throw an error - introduce the idea of unpredictability of external API's or DB fetching.
+
+The catch(error){} block in the async functions has the same purpose as the .catch() block chained to a Promise.
+
+The next example provides something more like a real-world case for catching errors.
+
+We don't just have to log errors when using .catch(), we can tell JS what to do if we do encounter an error!
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+In the previous lesson on Fetch API, we used fetch() with regular Promise syntax. We fetched data from the SpaceX-API and we used then() and catch() blocks to handle promises: 
+
+Using the await keyword before a Promise, in our case fetch(url), pauses the async function until that asynchronous operation is finished and resumes it once the Promise is settled.
+
+ Once the Promise is fulfilled, await will return the resolved value (in this case the response from the API) and store it in a variable. After this the resolved value can be accessed directly, without having to use then() and catch().
+

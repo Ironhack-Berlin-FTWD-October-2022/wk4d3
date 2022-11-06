@@ -1,0 +1,114 @@
+This morning we're going to start by talking about Javascript Promises.
+
+***Does someone want to tell me what we mean by synchronous and asynchronous?
+
+Javascript is a single-threaded language which means that only one thing can happen at a time.  The way it works is chronological, most of you will be at the stage where this idea is pretty firmly ingrained for you, but just in case, we'll look at what we mean.
+
+*** Look at the doSomething function
+
+Okay great, we know then that javascript is by its nature being read line by line, and top to bottom.
+
+////////////////////////
+
+Do we know then what we mean by a callback?
+
+A callback is a function that is passed as an argument to another function and then invoked later.
+
+It is a technique in programing that lets us write code more dynamically, it lets us introduce conditions for when we want our functions to run.
+
+In the example we just saw, no callbacks were used, we were just running one function after another, but what if we pass function 2 as a parameter to function 1?
+
+    Pass doSomething2() to doSomething1(), eventually doSomething(doSomething2, doSomething3)
+
+////////////////////////
+
+This is all great but maybe there is a downside.
+
+Let's look at the next example.
+
+We've got an array of directions telling us how to get to Landsberger Allee S Bahnhof.  We've got a function which takes 3 arguments: index (which will tell us which number in the array we want to deal with), we've got callback and we've got error callback (which will tell us what to do if something goes wrong when accessing our array elements).
+
+First is an if check to say what happens if something does go wrong, but we're more interested in this second bit - callback();
+
+Let's see what happens if we want to pass all these callbacks inside each other to schedule them.
+
+    *********Go through the example on (line 36)
+
+This is known as callback hell. Code is a nightmare!
+
+//////////////////////////////////
+
+Promises are basically there to solve this issue of callback hell and to make it easier to schedule events.
+
+So there are two stages of a promise that we need to be aware of: creating a promise and consuming a promise.
+
+Let's look at this example:  We have an object with a user called bob.  
+
+****Ask class to fill info other than name and id
+
+We create a promise, and pass it  the parameters of resolve and reject.  Resolve is used for when happens if everything goes to plan and we get what we came for, reject is reserved for when something goes wrong and we can't resolve our promise.
+
+Let's see what happens here...
+
+    *** console.log full promise to show promise fulfilled but no return
+
+So what's happening here? 
+
+A promise doesn't return a value, it returns the promise to at some point return a value.
+
+A promise can exist in 1 of 3 states:
+
+    Pending: When a Promise gets created it is in a pending state, until it gets fulfilled or rejected.
+
+    Fulfilled: When the resolve() is called the Promise goes to a fulfilled state.
+
+    Rejected: When the reject() is called, or if an Error is thrown, the Promise becomes rejected.
+
+So what do we do now?
+
+////////////////////////////////////////////////////////////////
+
+We need to actually consume the promise to return the value, and here's the syntax we use for that.
+
+To consume the promise, we need to use .then()
+
+    Look at (line97)
+
+So as you can see we need to use .then() to return the value.  .then() deals with a success case for when the promise is resolved successfully and .catch is used for when something goes wrong and we can't proceed.
+
+
+The other major benefit of the .then() syntax is that it allows us to actually just chain on our next steps.
+
+For example, if we look at our response again, we can return, let's say, just a string for the moment.
+
+If we do another .then() and console log our result here, you see that we get it in our second .then()
+
+Let's see what happens when we throw our error though.
+
+the .catch() method catches it.
+
+What's really special about this syntax is that one .catch() doesn't just stop us dead in our tracks.
+
+we can attach another .then() to the chain and get what we want from it.
+
+We can even attach another .catch() further down the chain to deal with other errors that might come up later.
+
+////////////////////////////////////
+
+
+Typically, we create promise chains in which operations occur one after the other. But what if we want to run some code only after multiple promises have been fulfilled?
+
+This can be done using the Promise.all() method. This method is used for aggregating the results of multiple promises.
+
+The Promise.all() method takes an array of promises as an argument. It returns a single Promise that resolves when all the promises in the array argument have been resolved.
+
+As you can see, even though we've got setTimeout on everything, we're getting the whole array in our console at once!
+
+
+
+
+
+
+
+
+

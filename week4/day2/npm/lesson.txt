@@ -1,0 +1,51 @@
+Node Package Manager is a resource that you'll end up finding you can't live without.
+
+A package is a piece of modular code which you can download and inject into your own project.
+
+In simple English, it’s all about code reusability and not having to reinvent the wheel every time we need to repeat the same action.
+
+So say for example, you get your first job as a developer in...a chain of dog grooming shops.  So your project manager says you need to develop a calendar which users can click on to book appointments.  Fair enough, you can do that but it's a lot of work and it's just one of a hundred features you need to develop over the coming week.
+
+On your first day, a senior developer asks you to help build their shopping cart feature. They ask you to write the business logic for calculating shipping prices and tax for their new sports section.
+
+You sit around for hours, researching logistics, shipping companies, and the tax rates for hundreds of cities around the world.
+
+This is when you realize, “Hey, there are so many companies that use this feature as well, this functionality has to exist somewhere already.” You actually can find most of the things you are looking for in the shopping cart exercise.
+
+You, as the pro software developer, copy and paste all of the code to the sports shopping cart, making heavy use of your find and replace feature.
+
+The next day, Mr(s). Senior developer asks you to build out another shopping cart, this time for food goods. Copy and paste the code again? No!
+
+All of this functionality could be extracted into modules and shared across your codebase. The logic for calculating tax, logistics, shipping, all could be separate modules that everyone in the company shares!
+
+Not only is extracting code into modules a timesaver for you, but it also is a useful software development practice and saves the company time and money
+
+What is a package manager and why do we need it?
+According to Wikipedia, a package manager or package management system is a collection of software tools that automates the process of installing, upgrading, configuring, and removing software packages for a computer’s operating system in a consistent manner. It typically maintains a database of software dependencies and version information to prevent software mismatches and missing prerequisites.
+
+Packages for your projects are hard to manage.
+
+When working on your code amongst a team, it’s really tricky to keep all the versions and dependencies aligned amongst everyone. Let’s say Bob and you work on a project together. Bob is using version 1.2 of some package/module. You’re using version 1.8.
+
+The problem here is that the code between those two versions may have changed drastically. Bob and you go to implement a new feature using this package, and now your version works on your computer, but not on Bob’s.
+
+Now imagine there are 100 other Bobs on your team. When that package updates, everyone has to update their version, or they’re running into problems.
+
+
+This is a nightmare! However, package managers can come to the rescue! One of them is the node package manager, known as npm.   
+
+//////////////////////////////////////////////
+
+npm is a package manager for Node. It comes with Node.
+
+npm allows you and other developers to share your JavaScript code easily, using command-line tools.
+
+npm has one of the most robust ecosystems for external packages. At the time of writing, there are over 836,000 libraries (npm modules) currently available.
+
+npm encourages good software development principles and code sharing.
+
+As mentioned before, npm has thousands of modules available for your use. These modules include functionality such as coloring text in your terminal, taking command-line input, getting Chuck Norris jokes, and even full-blown web frameworks!
+
+We will be heavily using npm packages so prepare to get familiar with a whole bunch of them.
+
+****Go through the lesson on Studio about using npm to use npm packages

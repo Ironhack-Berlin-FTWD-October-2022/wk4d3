@@ -1,0 +1,57 @@
+// A couple of assumptions I've made about the lesson are that we should focus completely on the mechanics of a promise. This means that although I think learning about async functions and awaiting operations are really vital to taking promises into the real world, I won't be covering that as I assume that the topic is big enough that it would be covered in another class.  The other assumptions are about the knowledge the class should have by this point in the course - of course I'll double check this as we go along.
+
+// I also really liked the fist of five method for checking understanding as we go (that was mentioned in the documentation that I was sent), so I'll assume that by this point the class would have gotten used to using it.
+
+// 
+
+// A promise in Javascript is an object which represents the eventual completion of some operation, or the eventual resolution of that value.
+
+// Resolved - the promise is resolved, the value, as promised has been returned
+// Pending - the wheels are in motion, but the promise has not yet been resolved and value has not yet been returned
+
+// Take the example of using Uber.  The driver promises to come pick you up and take you to a destination. If this promise is resolved, you've got the lift and you've reached your destination.  If the driver is on his way, the promise to come get you is pending.  If the driver has some emergency or is finished for the night, he can reject your request, the promise is rejected!
+
+// What are promises used for? 
+
+// Promises are basically implemented when we expect a piece of code to take time, that being when we are using asynchronous operations.  The best real world examples I can think of are when making requests to a database, or to an API external to our code.  If you aren't familiar with this concept, I'll put it into context with a real-world example at the end of the lesson.
+
+// const response = new Promise((resolve, reject) => {
+//   if (user.name === "Inga") {
+//     resolve(user);
+//   }
+// });
+// console.log(response);
+
+// response.then((result) => {
+//   console.log("in the then bit", result);
+// });
+
+// const isUser = new Promise((resolve, reject) => {
+//   if (user.name === "Inga") {
+//     setTimeout(() => {
+//       resolve(user);
+//     }, 1000);
+//   } else {
+//     reject("You are not authorized to access this thing");
+//   }
+// });
+// console.log(isUser);
+// const printOneToFive = () => {
+//   return 12345;
+// };
+
+// isUser
+//   .then((response) => {
+//     console.log("value", response);
+//     return printOneToFive();
+//   })
+//   .then((response) => {
+//     console.log("response", response);
+//   })
+//   .catch((err) => {
+//     console.error("Error: " + err);
+//   });
+
+// fetch("https://catfact.ninja/fact")
+//   .then((response) => console.log(response.json()))
+//   .then((data) => console.log(data));

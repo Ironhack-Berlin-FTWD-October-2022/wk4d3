@@ -1,0 +1,51 @@
+It's time to put all of this into more of a real-world scenario with having a look at the Fetch() API
+
+So what is the Fetch API?  The Fetch API is an interface used for fetching resources over the Internet. 
+It provides a fetch() method which you can use to make HTTP requests and fetch data from a server.  We discussed at the very start of the lesson on Promises, the situations where we might encounter promises, and we said that it's basically when something takes time.  We mentioned a couple of things = fetching from our own databases or servers, and fetching from external sources.  What we'll do today is to look at fetching from external resources.
+
+ - Dive into code
+
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+So as you can see from this first example we are using the now familiar syntaxes (line 4)
+So what is it we're getting here? We are fetching a JSON file from a server.  
+
+*** quick check about JSON - basically returns something that resembles a JS object with key-value pairs, but can be used pretty much universally in computer programming.  Using .json()  converts it into the familiar object structure that we know and love.
+
+
+*** Ask what do you think will happen if we just console.log 'response.json()'?
+
+We return a promise which needs to be resolved!
+
+The json() method is an asynchronous method that returns a second promise, which resolves with the parsed JSON content.
+
+
+And to do this, of course, we chain on a .then() to consume our promise.
+
+As you can see, when we do this, we get our response - in this case we get an array of data from 205 launches, with all sorts of information like the name of each rocket, it's unique id, information about the crew and date of launch.
+
+
+
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Finally, we'll see what all this data looks like on our web page and think about ways we might be able to use it.
+
+So what we've done here, is we've fetched our data which has returned a promise - which we've then resolved with response.json().
+
+We've used a forEach loop in which 
+
+- for each of the individual object in the array of objects -
+
+- we've gone through multiple nested objects, to get to the value we want, which is the URL of the small version? of the patch for that launch.
+
+-we've assigned this to a constant variable
+
+-created an image (remember we're inside a forEach loop, so this will happen for every item)
+
+-set the src of each image to the patchImg URL.
+
+and, voila!
+
+Cool!

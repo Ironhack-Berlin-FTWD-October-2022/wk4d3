@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+    <title>Async / Await</title>
+</head>
+<body>
+<div class="container">
+    <div class="row bg-warning p-3 text-whte">
+        <h1 class="mt-5 display-1">Async / Await</h1>
+    </div>
+    <div class="row">
+        <h1 class="mt-3">Why use Async/Await Functions?</h1>
+        <ul class="mt-2">
+            <li>
+                <h4>The async and await keywords provide a better syntax for working with Promises and allow you to write asynchronous code
+                as if it was synchronous. These two keywords allow us to suspend the execution of the code while we await for
+                asynchronous code to finish.</h4>
+            </li>
+            
+        </ul>
+        <h2 class="mt-2 text-danger">IMPORTANT!!!!!</h2>
+        <h4>Async functions return a promise (not a value!)</h4>
+    </div>
+    
+<p><u>The Synchronous approach!</u></p>
+<code>
+   <p class="underline">function doSomething(){</p>
+    <p class="mx-5">const data = longLongLongRunningFunction()<span class="text-success mx-3">//Program Stuck waiting for this line!</span></p>
+    <p>}</p>
+</code>
+<p><u>The Asynchronous approach!</u></p>
+<code class="bg-light">
+   <p>async function doSomething(){</p>
+    <p class="mx-5">const data = await longLongLongRunningFunction()<span class="text-success mx-3">//Program Stuck waiting for this line!</span></p>
+    <p>}</p>
+    
+</code>
+<div class="row">
+    <h1 class="mt-5">How do we handle Errors?</h1>
+    <ul class="mt-2">
+        <li>
+            <h4>Try</h4>
+        </li>
+        <li>
+            <h4>Catch</h4>
+        </li>
+    </ul>
+</div>
+
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
