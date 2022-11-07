@@ -5,6 +5,8 @@ A package is a piece of modular code which you can download and inject into your
 In simple English, it’s all about code reusability and not having to reinvent the wheel every time we need to repeat the same action.
 
 So say for example, you get your first job as a developer in...a chain of dog grooming shops.  So your project manager says you need to develop a calendar which users can click on to book appointments.  Fair enough, you can do that but it's a lot of work and it's just one of a hundred features you need to develop over the coming week.
+ 
+OR
 
 On your first day, a senior developer asks you to help build their shopping cart feature. They ask you to write the business logic for calculating shipping prices and tax for their new sports section.
 
@@ -36,7 +38,7 @@ This is a nightmare! However, package managers can come to the rescue! One of th
 
 //////////////////////////////////////////////
 
-npm is a package manager for Node. It comes with Node.
+npm is a package manager for Node. It comes with Node and the two are pretty interlinked.
 
 npm allows you and other developers to share your JavaScript code easily, using command-line tools.
 
@@ -49,3 +51,5 @@ As mentioned before, npm has thousands of modules available for your use. These 
 We will be heavily using npm packages so prepare to get familiar with a whole bunch of them.
 
 ****Go through the lesson on Studio about using npm to use npm packages
+
+npm i
