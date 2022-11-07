@@ -1,60 +1,58 @@
-function doSomething() {
+//simple callback
+function doSomething(callback) {
   console.log("something one");
 }
-
 function doSomething2() {
   console.log("something two");
 }
-
 function doSomething3() {
   console.log("something three");
 }
 
-doSomething();
-doSomething2();
+doSomething(function doSomething2() {
+  console.log("something two");
+});
+// doSomething2();
 doSomething3();
 
-/////////////////////////////////////
-
-const password = "password1";
-
-function acceptLogin() {
-  console.log("Hello, welcome to your profile");
-}
-
-function rejectLogin() {
-  console.log("Couldn't log you in, sorry!");
-}
-
-function handleLogin(password, onSuccess, onError) {
-  if (password === "password1") {
-    onSuccess();
-  } else {
-    onError();
-  }
-}
-
-handleLogin("password1", acceptLogin, rejectLogin);
-
-// function doSomething(callback1, callback2) {
+// function doSomething(callback) {
+//   callback();
 //   console.log("something one");
-//   callback1();
-//   callback2();
 // }
 
-// doSomething()
+// function doSomething2() {
+//   console.log("something two");
+// }
 
-// // function doSomething2() {
-// //   console.log("something two");
-// // }
+// function doSomething3() {
+//   console.log("something three");
+// }
 
-// // function doSomething3() {
-// //   console.log("something three");
-// // }
-
-// // doSomething(doSomething2, doSomething3);
+// doSomething(doSomething2);
 // // doSomething2();
-// // doSomething3();
+// doSomething3();
+
+// /////////////////////////////////////
+
+// const password = "password1";
+
+// function acceptLogin() {
+//   console.log("Hello, welcome to your profile");
+// }
+
+// function rejectLogin() {
+//   console.log("Couldn't log you in, sorry!");
+// }
+
+// function handleLogin(password, onSuccess, onError) {
+//   if (password === "password2") {
+//     onSuccess();
+//   } else {
+//     onError();
+//   }
+// }
+
+// handleLogin("password1", acceptLogin, rejectLogin);
 
 // ////////////////////////////////////
 
@@ -111,40 +109,45 @@ handleLogin("password1", acceptLogin, rejectLogin);
 // );
 ////////////////////////////////////////
 
-const user = {
-  name: "Bob",
-  id: 1,
-  mood: "happy",
-  favFood: "",
-  password: "Sushi123",
-};
-const error = {
-  message: "Not today, satan!",
-  code: 401,
-};
-// // Creating a promise
-// console.log(
-// const response =
-new Promise((resolve, reject) => {
-  if (user.password === "Sushi123") {
-    resolve(user);
-  } else {
-    reject(error);
-  }
-});
-// );
+// const user = {
+//   name: "Bob",
+//   id: 1,
+//   mood: "happy",
+//   favFood: "Sushi",
+//   password: "Burgers123",
+// };
 
-// //
+// const error = {
+//   message: "Not today, satan!",
+//   code: 401,
+// };
 
-// // Consuming a promise
+// // // // Creating a promise
+
+// const response = new Promise((resolve, reject) => {
+//   if (user.password === "Burgers13") {
+//     resolve(user);
+//   } else {
+//     reject(error);
+//   }
+// });
+
+// // //
+
+// // // Consuming a promise
 
 // response
 //   .then((result) => {
-//     console.log(result.mood);
-//     return "A new message";
+//     const newBob = result.mood + " " + result.favFood;
+//     if (newBob === "happy Sushi") {
+//       console.log("okay");
+//     }
+//     return newBob + " " + "ulyktftdyjtf";
 //   })
-//   .then((result2) => {
-//     console.log(result2);
+//   .then((moodAndFood) => {
+//     const newerBob = moodAndFood + " " + "OK";
+//     console.log(newerBob);
+//     return newerBob;
 //   })
 //   .catch((err) => {
 //     console.log("oops");
@@ -154,37 +157,37 @@ new Promise((resolve, reject) => {
 //     console.log("I'll be called anyway");
 //   });
 
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
-// //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
+// // //
 
-const p1 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve("I waited one second"), 1000);
-});
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve("I waited one second"), 1000);
+// });
 
-const p2 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(1337), 2000);
-});
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(1337), 2000);
+// });
 
-const p3 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve({ name: "Bob" }), 4000);
-});
+// const p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve({ name: "Bob" }), 4000);
+// });
 
-const p4 = Promise.all([p1, p2, p3]);
+// const p4 = Promise.all([p1, p2, p3]);
 
-p4.then((values) => console.log("values", values));
+// p4.then((values) => console.log("values", values));

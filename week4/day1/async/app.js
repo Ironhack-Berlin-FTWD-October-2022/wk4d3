@@ -22,11 +22,11 @@ let promise = new Promise(function (resolve, reject) {
   }, 3000);
 });
 
-// // RESOLVING A PROMISE WITH AWAIT
+// // // RESOLVING A PROMISE WITH AWAIT
 
 // async function asyncFunc() {
-//   // wait until the promise resolves
-//   console.log("hello, we will wait for 3 seconds");
+//   //   // wait until the promise resolves
+//   // console.log("hello, we will wait for 3 seconds");
 //   let result = await promise;
 //   console.log("result", result);
 // }
@@ -50,7 +50,7 @@ let promise = new Promise(function (resolve, reject) {
 //       } else {
 //         resolve(console.log("directionsStep", directions[index]));
 //       }
-//     }, 2000);
+//     }, 5000);
 //   });
 // }
 
@@ -93,7 +93,6 @@ let promise = new Promise(function (resolve, reject) {
 //     await obtainDirections(1);
 //     await obtainDirections(2);
 //     await obtainDirections(3);
-
 //     console.log("You arrived at your destination!");
 //   } catch (err) {
 //     console.log(err);
@@ -107,38 +106,37 @@ let promise = new Promise(function (resolve, reject) {
 // async function displayMissionPatches() {
 //   try {
 //     const response = await fetch("https://api.spacexdata.com/v4/launches");
+//     // console.log(response.json());
 //     const jsonResult = await response.json();
-
 //     console.log("Parsed response awaited: ", jsonResult);
 //   } catch (err) {
-//     // Handle error or a rejected Promise
-//     console.log("Something went wrong!", error);
+//     //     // Handle error or a rejected Promise
+//     console.log("Something went wrong!", err);
 //   }
 // }
 
 // displayMissionPatches();
 
-// async function displayMissionPatches(limit) {
-//   try {
-//     const response = await fetch("https://api.spacexdata.com/v4/launches");
-//     const jsonResponse = await response.json();
+async function displayMissionPatches(limit) {
+  try {
+    const response = await fetch("https://api.spacexdata.com/v4/launches");
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
 
-//     console.log(jsonResponse);
+    const launchesToDisplay = jsonResponse.slice(5, limit);
 
-//     const launchesToDisplay = jsonResponse.slice(0, limit);
+    launchesToDisplay.forEach((launchObj) => {
+      const patchImage = launchObj.links.patch.small;
+      const imgElement = document.createElement("img");
 
-//     launchesToDisplay.forEach((launchObj) => {
-//       const patchImage = launchObj.links.patch.small;
-//       const imgElement = document.createElement("img");
+      imgElement.setAttribute("src", patchImage);
+      imgElement.setAttribute("width", 200);
+      document.body.appendChild(imgElement);
+    });
+  } catch (error) {
+    // Handle error or a rejected Promise
+    console.log("Something went wrong!", error);
+  }
+}
 
-//       imgElement.setAttribute("src", patchImage);
-//       imgElement.setAttribute("width", 200);
-//       document.body.appendChild(imgElement);
-//     });
-//   } catch (error) {
-//     // Handle error or a rejected Promise
-//     console.log("Something went wrong!", error);
-//   }
-// }
-
-// displayMissionPatches(10);
+displayMissionPatches(10);

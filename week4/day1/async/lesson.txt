@@ -67,3 +67,8 @@ Using the await keyword before a Promise, in our case fetch(url), pauses the asy
 
  Once the Promise is fulfilled, await will return the resolved value (in this case the response from the API) and store it in a variable. After this the resolved value can be accessed directly, without having to use then() and catch().
 
+
+In the example we're putting everything together (that being try catch, fetch and async/await).
+
+We expect that fetching the data will take time, and that converting to json will take time so we use await.
+
