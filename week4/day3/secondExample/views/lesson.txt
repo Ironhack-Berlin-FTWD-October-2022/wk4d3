@@ -1,0 +1,43 @@
+Next we're going to talk about partials
+
+Partials in handlebars is a helper for reusing chunks of template code in handlebars files. This can be useful for any repeating elements, such as a post card design, or for splitting out components like a header for easier to manage template files.
+
+Let's start by looking at our app.js file.  Looks pretty much the same as before, with our routes already defined.
+
+//////////////////////////////
+
+If we were to look at all our .hbs files, we see that it's quite a lot of repeated code.
+
+To avoid repeating that much code we can create a layout.
+
+A layout is a template with a boilerplate code you can use on many many pages.
+
+we can actually create a layout file in our views folder, which basically has the basic html structure ready to be reused in different files
+
+This is the only page which will have the full html setup, on every other page we will say that we want to use this template.
+
+We want to basically say 'body goes here'.  Everything else can stay the same!
+
+***Demonstrate how this works by showing pared down other .hbs files. ***
+
+////////////////////////////
+
+Next up, let's think about what else might not change when we're going between views.  I think we can put in a header and maybe a footer.
+
+Starting with the navbar:  
+
+We're using bootstrap here just to make it super easy to include a navbar that looks quite good.
+
+    ***************Demonstrate code
+
+///////////////////////////
+
+Ok, so we just save a LOT of code lines adding our layout.hbs, but we want to add content to each of our templates. Let’s add the following to the index.hbs:
+
+*** show code with cards etc in index.hbs
+
+////////////////////
+
+Sometimes we might not want to render the layout. Using hbs is pretty simple, we just need to set to false the layout property inside the data object we send on the res.render method.
+
+    ***show in app.js
