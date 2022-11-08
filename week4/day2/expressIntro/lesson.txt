@@ -1,0 +1,7 @@
+In this lesson, we will learn how a framework like Express can help us make our backend code more organized. Before we can get into the real capabilities of the backend, we must first learn how to set up a basic website using backend technologies. That’s precisely what we will be learning here: how to make a basic website using Node and Express.
+
+So as we discussed, Express is an npm package that we can download and use in our own code.  It's ultimately a collection of objects and functions which dictate interactions for us to save us doing the heavy lifting of writing it all out ourselves.
+
+I think rather than going over the theory too much we will
+***Dive into code***
+
