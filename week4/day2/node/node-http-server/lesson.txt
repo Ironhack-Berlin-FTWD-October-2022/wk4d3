@@ -1,0 +1,18 @@
+Let's talk more about the backend and what we might be doing with it.  Remember we were talking about the request-response cycle.
+
+For this exercise, we are using the http package which is already built into node.  It has it's own methods attached to it like createServer() and server.listen().
+
+What we're doing is basically building a server and making requests to it.  
+
+***Go through line by line and explain the callback.***
+
+
+in the next part of the lesson we will be looking at express which is basically an npm package which lets us write this far more easily and lets us deal with more complex code.
+
+The reasons are that this method is very limited:
+
+Doesn’t work for real HTML - The “HTML” in our three pages wasn’t very complicated, but we now know that even the simplest of Websites have hundreds of lines of HTML. If we put all that HTML inside our response.write() strings, we would have the biggest if..else statement in the world.
+
+What about CSS & images? - In this simple server, every resource we want browsers to be able to access needs a new else if. Can you imagine having our entire CSS in there too? And what about images? It would take a lot more setup for those very normal needs to be met.
+
+Doesn’t scale well - Your average Website has dozens and dozens of different pages that users can visit. This approach of having each page be its own else if doesn’t scale well for a lot of pages. We will end up with, again, the biggest if..else statement in the world. The code would not be organized, clean, readable, or any of the good things we want the code to be.

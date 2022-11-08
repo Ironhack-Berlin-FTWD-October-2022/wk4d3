@@ -52,4 +52,3 @@ We will be heavily using npm packages so prepare to get familiar with a whole bu
 
 ****Go through the lesson on Studio about using npm to use npm packages
 
-npm i

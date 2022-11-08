@@ -4,7 +4,6 @@ A word of warning, this is quite dry, but it's necessary, so I think we can have
 
 I'm not going over absolutely everything that you've got in studio, but if you're extremely interested in how the internet works you can have a look 
 
-
 It's one of these things I think most of us take for granted until we have to think about it, and then seems incredibly complicated the more you do think about it.  But the internet actually just functions on a few basic principles.
 
 *** let's watch the video first and then make sure we've understood the core principles regarding servers, ISPs and home computers, i.e. clients.
@@ -13,6 +12,7 @@ It's one of these things I think most of us take for granted until we have to th
     - servers are computers connected directly to the internet.
     - web pages are files stored on these servers
     - home computers are not directly (technically) connected to the internet, as they must go through an isp
+    - when you will hear the word client, it can refer to the home computer itself but is most often talking about the browser (e.g. chrome, safari etc)
 
 The words server and client are the most important things to take note of at this stage.
 
@@ -30,8 +30,8 @@ Now, this part is particularly important so I'm going to read it out exactly as 
 When talking about the Web, we have to have a basic understanding of certain terms:
 
 HTML (Hypertext markup language) - the language we use to create web pages;
-HTTP (Hypertext Transfer Protocol ) - although other protocols are being used, such as FTP(File Transfer Protocol), this is the most commonly used protocol. It was developed specifically for the World Wide Web and favored for its simplicity and speed. This protocol requests the ‘HTML’ document from the server and serves it to the browser. HTTP is how computers on the Internet communicate. The technical details aren’t important right now, but in short: clients (including your browser) use the rules of HTTP to send requests to servers and servers respond using those rules as well. You can imagine this communication as a dialogue between client and server.
-To summarize: a protocol is simply a set of rules for communication, in this case, for communication between client and server computers.
+HTTP (Hypertext Transfer Protocol ) - this is the most commonly used protocol. It was developed specifically for the World Wide Web and favored for its simplicity and speed. This protocol requests the ‘HTML’ document from the server and serves it to the browser. HTTP is how computers on the Internet communicate. The technical details aren’t important right now, but in short: clients (including your browser) use the rules of HTTP to send requests to servers and servers respond using those rules as well. You can imagine this communication as a dialogue between client and server.
+To summarize: a protocol is simply a set of rules for communication, in this case, for communication between client and server.
 
 We know what this means because we all use language to communicate and understand that language uses rules that we all follow.  I'm sure a lot of us know what a broken protocol looks like too, whether it's dealing with older Berliners or maybe trying to understand my accent sometimes. 
 
@@ -42,6 +42,9 @@ Next we'll look at the elements of a URL
 
 ***Look at the diagram of a URL and read through each.  Divide this into everything before 'path' and everything after, as being everything a dev doesn't have control over, and everything they do (TECHNICALLY/ AT THIS STAGE!)
 
+the Domain Name System = DNS
+
+hash/fragment give example of scrolling to id section
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55,11 +58,12 @@ First of all let's make sure we understand the root conversation that's happenin
 An HTTP conversation follows the pattern of:
 
 Client calls ironhack.com > 
-Client says - Hi Server - 
-Hi Client - Can you get me index.html? (this is the request)
-Server thinks  for a while> 
-Server says - Okay! Here it is. 
-Server sends the index.html file (this is the response) Server hangs up
+Client says - Hi Server 
+- Hi Client 
+- Can you get me index.html? (this is the request)
+- Server thinks for a while> 
+- Server says - Okay! Here it is. 
+- Server sends the index.html file (this is the response) Server hangs up
 
 
 All this is just to fetch the initial HTML (index.html)
@@ -70,20 +74,21 @@ So, what is happening here is basically a request from the client's side, and a 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Yesterday we talked about Promises and making requests asynchronous.  It's a weird concept to get our heads around without actually knowing specifically what real world examples could look like, but if there's still any doubt about it I think this might make that idea a bit more solid.
+Yesterday we talked about Promises and making requests asynchronous. 
 
 It's important to realize that a server's resources are not completely infinite.  Let's think for example about youtube.  How many people are using youtube at any one given moment? If you think then that every time somebody clicks a button to load a video or gets anything from youtube's server (even loading thumbnail images and user info!), they are making requests.  It's a huge, ridiculous, infinite amount of requests being made all the time!
 
-A server therefore has to schedule these requests and prioritize them in a way that makes sense in order to accomodate them all.
+A server therefore has to schedule these requests and prioritize them in a way that makes sense in order to accommodate them all.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 min break?
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 min break?
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 min break?
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 min break?
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5 min break?
+Example
 
+When a bank customer accesses online banking services with a web browser (the client), the client initiates a request to the bank’s web server. The customer’s login credentials may be stored in a database, and the web server accesses the database server as a client.
 
-So next we're onto HTTP verbs.  These 4 magic words are the sort of universally accepted way to make requests to get the host to do something we want it to do.  
+An application server interprets the returned data by applying the bank’s business logic and provides the output to the web server. Finally, the web server returns the result to the client web browser for display.
+
+In each step of this sequence of client-server message exchanges, a computer processes a request and returns data. This is the request-response messaging pattern. When all the requests are met, the sequence is complete, and the web browser presents the data to the customer.
+
+So what is the syntaz we need to use? HTTP verbs!  These 4 magic words are the sort of universally accepted way to make requests to get the host to do something we want it to do.  
 
 GET
 POST
@@ -94,8 +99,17 @@ DELETE
 
 *** Demonstration of the network tab in the console to show GET POST PUT and DELETE with like instagram or something.
 
+You will be using these on the client side and they will be understood on the server side.
+
+
 As a word of warning, I'd stick to using these words moving forward, but if you're looking at a lot of code, as you will be when it comes closer to making your next projects, you might sometimes encounter people using POST as the request to either update or delete something, instead of PUT or DELETE.  It's perfectly doable and basically ends up with the same result but just with a slightly different logic and syntax.
 
-
-
 !!!!!!!!!!!!!!!! more to follow - status codes and IP addresses to domains
+
+
+The process of finding the IP address is achieved by searching the DNS until a match on the domain name is found. This process is also known as DNS lookup, NSLOOKUP, or (erroneously) IP lookup.
+
+The process of finding the hostname (or domain name) from an IP address involves sending a message to the IP address and requesting the computer located at that IP address to return its name. Usually, this will be the same as the domain name. However, many computers host many domains so that the hostname may be one of the domain names hosted, or it could be something different.
+
+To make comparison to the real world, it’s like how we use street addresses for finding a house as they are much easier to remember and to read then using the latitude and longitude coordinates, right?
+

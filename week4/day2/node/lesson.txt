@@ -1,16 +1,17 @@
 So now we'll talk a little bit about what node is.
 
-Node is something that is a bit hard to explain, but it's one of the most important tools we'll have used by the end of this course and from this point basically everything you work on will be build on top of node.
+Node is something that is a bit hard to explain, but it's one of the most important tools we'll have used by the end of this course and from this point basically everything you work on will be build on top of node.  
 
 
-It seems hard now to think of Javascript as anything other than the language that the whole internet runs on, but before node was introduced in 2009, to communicate with servers etc, JS was used only on the client side, i.e. in the browser.  So you had HTML to get the elements on the page, CSS to make it look pretty, and Javascript to make the elements you have to introduce some interactivity.  You needed to use other languages to actually communicate with a backend(server).
+To developers it seems hard now to think of Javascript as anything other than the language that the whole internet runs on, but before node was introduced in 2009, to communicate with servers etc, JS was used only on the client side, i.e. in the browser.  So you had HTML to get the elements on the page, CSS to make it look pretty, and Javascript to make the elements you have to introduce some interactivity, meaning what happens when I press a button, and so on.  You needed to use other languages to actually communicate with a backend(server).
 
 What node did, and does, is to let you run javascript outside of browsers, INCLUDING on web servers.
-
 
 To summarize, before Node, the only place where you could use JavaScript was a client-side environment - the browsers. Thanks to Node, we can use JS in the backend side as well (aka, the server-side), and this makes us, as JavaScript developers, full-stack developers. So thanks, Node. ❤️
 
 We're not going deep into how machines work, and how they process programming languages, but for the time being we'll just say that machines don't natively understand programming languages.  It has to be translated into 1s and 0s.
+
+///////////
 
 Node is not a language but a runtime environment.
 
@@ -23,9 +24,32 @@ Important bit is :  Node js translates a JavaScript program into bytecode for co
 Our usage of NodeJS
 In this course, we will use Node at first to learn some new features of JavaScript, and write some more complex JavaScript algorithms.
 
-Later on, we will use Node as a web server (we will be talking about servers soon), and we will use a web framework built on top of Node and it's sexy brother ExpressJS.
+Later on, we will use Node as a web server (we will be talking about servers soon), and we will use a web framework built on top of Node and it's counterpart ExpressJS.
 
+Express is basically a load of pre-written functions that we can use to make backend programming easier, and make our code more readable.
 
 ************* onto the node.js installation
+    latest stable version!!!! maybe up to 19, but all good after about 12/14
+/////////////////////////////////////////////////////
+
+Talking more about node:
+
+So basically, up until now we have been writing code which have been static files on our computer.  This means that we're using HTML, CSS and JavaScript which can all communicate with each other.  But if we want the world to see our code in action, we need to have it served somewhere.
+
+In order to do this, we will actually be working with a served backend.
+
+We talked before about request and response but lets go a bit deeper and see what we mean in real terms.
+
+For a website, for example, your browser has to make all these requests (and others):
+
+Request the initial HTML code
+Request the CSS file
+Request any images (each file is a separate request)
+Request any JavaScript files (file is a separate request)
+Request any font files (again, each one its own request)
+
+    ***Look at amazon.com network tab in firefox
+
+Servers are computers which are turned on all the time, and always connected to the internet.
 
 

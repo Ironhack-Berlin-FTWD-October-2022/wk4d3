@@ -1,19 +1,24 @@
-//simple callback
-function doSomething(callback) {
-  console.log("something one");
-}
-function doSomething2() {
-  console.log("something two");
-}
-function doSomething3() {
-  console.log("something three");
-}
+// //simple callback
+// function doSomething(callback) {
+//   console.log("something one");
+// }
+// function doSomething2() {
+//   console.log("something two");
+// }
+// function doSomething3() {
+//   console.log("something three");
+// }
 
-doSomething(function doSomething2() {
-  console.log("something two");
-});
-// doSomething2();
-doSomething3();
+// doSomething(function doSomething2() {
+//   console.log("something two");
+// });
+// // doSomething2();
+// doSomething3();
+async function randomFunction() {
+  const myText = "The weather is cold";
+  const newString = await myText.replace("cold", "warm");
+  console.log(newString); // Should print "The weather is warm"
+}
 
 // function doSomething(callback) {
 //   callback();
