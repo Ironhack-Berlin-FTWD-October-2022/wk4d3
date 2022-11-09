@@ -41,3 +41,23 @@ Ok, so we just save a LOT of code lines adding our layout.hbs, but we want to ad
 Sometimes we might not want to render the layout. Using hbs is pretty simple, we just need to set to false the layout property inside the data object we send on the res.render method.
 
     ***show in app.js
+
+////////////////////////////////
+
+So what are partials?  Partials are pieces of code which can be reused throughout our projects.
+
+Say for example, you know you're going to be using a card in lots of places throughout our app. 
+
+we can actually have prewritten code which has all the elements already in place for this.
+
+    ****show card partial
+
+we first need to add it to our app.js that we'll be using partials in this specific folder.
+
+
+Then we can go ahead and use it in our ______ view file.
+
+    ***demonstrate here
+
+But that doesn't do so much for us, or at least I should say that we can do much much more than just have a static piece of code that we can insert different places.
+

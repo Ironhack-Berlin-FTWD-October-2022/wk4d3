@@ -11,9 +11,9 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.get("/", (req, res, next) => res.render("index"));
 
-// app.get("/players", (req, res, next) => res.render("players"));
+app.get("/areas", (req, res, next) => res.render("areas"));
 
-app.get("/teams", (req, res, next) => res.render("teams"));
+// app.get("/venues", (req, res, next) => res.render("venues"));
 
 app.listen(3000, () => console.log("listening on port 3000"));
 
@@ -28,85 +28,38 @@ app.listen(3000, () => console.log("listening on port 3000"));
 
 // array of info to be iterated over in card partial
 
-app.get("/players", (req, res, next) => {
+app.get("/venues", (req, res, next) => {
   // ADD THIS:
-  const players = [
+  const venues = [
     {
-      name: "Rusell",
-      lastName: "Westbrook",
-      team: "OKC",
+      name: "Loophole",
+      address: "Boddinstraße 60, 12053 Berlin",
+      area: "Neukoelln",
       photo:
-        "https://thunderousintentions.com/wp-content/uploads/getty-images/2017/12/891998404-oklahoma-city-thunder-v-indiana-pacers.jpg.jpg",
-      average: [
-        { year: 2013, points: 82 },
-        { year: 2014, points: 82 },
-        { year: 2015, points: 60 },
-        { year: 2016, points: 46 },
-        { year: 2017, points: 67 },
-        { year: 2018, points: 80 },
-      ],
+        "https://groove.de/wp-content/uploads/2022/06/CF82700A-3EE1-44BC-9E82-DAEAB83F909B_1_105_c.jpeg",
     },
     {
-      name: "Kevin",
-      lastName: "Durant",
-      team: "GSW",
+      name: "Schockoladen",
+      address: "Ackerstraße 169, 10115 Berlin",
+      area: "Prenzlauer Berg",
       photo:
-        "https://img.bleacherreport.net/img/images/photos/003/670/482/hi-res-3c2473cd8600df96c4b94c93808562c8_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top",
-      average: [
-        { year: 2013, points: 76 },
-        { year: 2014, points: 80 },
-        { year: 2015, points: 65 },
-        { year: 2016, points: 50 },
-        { year: 2017, points: 67 },
-        { year: 2018, points: 78 },
-      ],
+        "https://media-cdn.tripadvisor.com/media/photo-s/03/5b/91/79/schokoladen.jpg",
     },
     {
-      name: "Lebron",
-      lastName: "James",
-      team: "CLE",
+      name: "8mm",
+      address: "Schönhauser Allee 177b, 10119 Berlin",
+      area: "Prenzlauer Berg",
       photo:
-        "https://usatftw.files.wordpress.com/2018/01/ap_cavaliers_timberwolves_basketball.jpg?w=1000&h=600&crop=1",
-      average: [
-        { year: 2013, points: 78 },
-        { year: 2014, points: 82 },
-        { year: 2015, points: 76 },
-        { year: 2016, points: 84 },
-        { year: 2017, points: 67 },
-        { year: 2018, points: 60 },
-      ],
+        "https://www.exberliner.com/wp-content/uploads/2022/08/8mm_20220513_2-1-scaled.jpg",
     },
     {
-      name: "Emanuel",
-      lastName: "Ginóbilli",
-      team: "SAS",
+      name: "Madame Claude",
+      address: "Lübbener Str. 19, 10997 Berlin",
+      area: "Kreuzberg",
       photo:
-        "https://cdn.vox-cdn.com/thumbor/Z9kR0HDJrzOzxOdwGe7Jwyxxvjk=/0x0:2802x4203/1200x800/filters:focal(1329x1158:1777x1606)/cdn.vox-cdn.com/uploads/chorus_image/image/57733525/usa_today_10429631.0.jpg",
-      average: [
-        { year: 2013, points: 82 },
-        { year: 2014, points: 76 },
-        { year: 2015, points: 74 },
-        { year: 2016, points: 80 },
-        { year: 2017, points: 66 },
-        { year: 2018, points: 63 },
-      ],
-    },
-    {
-      name: "Kyrie",
-      lastName: "Irving",
-      team: "BOS",
-      photo:
-        "https://cdn-s3.si.com/s3fs-public/styles/marquee_large_2x/public/2017/11/11/kyrie-irving-mvp-case.jpg?itok=PWYqUSGf",
-      average: [
-        { year: 2013, points: 74 },
-        { year: 2014, points: 72 },
-        { year: 2015, points: 66 },
-        { year: 2016, points: 82 },
-        { year: 2017, points: 64 },
-        { year: 2018, points: 61 },
-      ],
+        "https://www.berlin.de/binaries/adressen/71128/source/1355765612/624x468/",
     },
   ];
 
-  res.render("players", { players });
+  res.render("venues", { venues });
 });
