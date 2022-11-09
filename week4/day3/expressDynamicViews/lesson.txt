@@ -1,0 +1,82 @@
+What we'll cover:
+
+Create views in Express,
+Understand what dynamic templates are and why we use them,
+Understand and use HandlebarsJS for creating dynamic templates,
+Use "if", "with" and "each" block helpers.
+
+///////////////////////////////////////////////////
+
+We're making a bit of ground with Express here.
+
+We're going to do a bit more work with express and think as well about how we could use this in a proper application.
+
+First things first, lets look at what we did yesterday:
+
+    ***Look at app.js from express intro***
+
+So we:
+     required express.js,
+     we declared the variable app to assign the object returned by calling express(),
+     we told express to make everything inside of public available as static files.
+     we used a callback function into which we passed req, res and next (deal with next later).
+     and we used response.sendFile to say what file we actually want to load when we get our response.
+
+     console log __dirname
+
+We are going to be dealing with a templating engine known as handlebars.  Remember we talked about npm packages which can do very simple things, or they can be huge and do very complex things.  
+
+Handlebars.js falls into the second category, basically what it does is lets you pass data far more easily from js to html, this includes passing data we get from the backend to the front end, for example an object we get from a database.
+
+What is really appealing is that up until this point we would have html files which had links to css and to js files, and only manipulate html from within javascript files, but with handlebars we can really perform actions from within something which looks like (but isn't) HTML.
+
+This last point should be clarified - Handlebars looks like html, and when we run it, it generates html, but it isn't actually html, which is why we use .hbs for our file names.
+
+////////////////////////////////////////////
+
+So let's move on to what we mean by views.  A view is just a keyword that is used when we're talking about these templating engines.  It is for this reason that we are going to be switching in our server from res.sendFile() to res.render()
+
+if we are sending a file we are sending something which has already been built, but for something which still needs to be built, we use the render method!
+
+    ****Take a look at render in app.js ****
+
+So as you can see, we're now saying we want "views" to be in __dirname(project directory) and our views folder.
+
+We are also telling express that we are using an engine to deal with views, and that engine is handlebars.
+
+We no longer have to specify this in our route, and we're saying that to / we want to render the view at index.js.  We no longer need to give the .hbs or .html as it was (as we are no longer sending an actual file)
+
+
+//////////////////////////////////////
+
+So we talked before about how we can now send data from the backend to the front end.  Obviously we'll be dealing with databases tomorrow when this idea will be more relevant but lets see if we can sort of emulate that just now.
+
+****Look at example at (line 10 hello.hbs)
+
+Any key passed in the object will be available in the view, as a variable of the same name.
+
+{{ variableName }} signifies that a variable will be output to the HTML we send to the client
+
+///////////////////////////////////////////
+
+This next bit is a bit weird but you might end up using it.  Say you want to include actual html in the object sent from the backend, 
+
+    *** look at trippple stache example
+
+//////////////////////////////////////////////
+
+Next we're on to the built in helpers that hbs has to help us make things a bit more dynamic.
+
+You can use the if helper to render a block conditionally. That means, if its argument returns false, undefined, null, "", 0, or [], Handlebars will not render the block.
+
+Since lastName is undefined, our <h2> tag will not be displayed! Now, let’s add the lastName property to the data!
+
+    **** add last name to object ****
+
+Also the unless block is very useful for rendering something if a condition isn't met.  Think of it as a conditional (line 24)
+
+
+
+
+
+

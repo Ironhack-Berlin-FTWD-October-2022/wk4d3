@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Hello {{name}}!</h1>
+    <p>Learning about handlebars at {{bootcamp}}!!{{{test}}}</p>
+    {{#if lastName}}
+    <h2>This will be displayed!!</h2>
+    {{/if}}
+
+    {{!-- //////////////////////////////////////////////////////////////// --}}
+
+    {{!-- {{#if address}}
+    <h2>This won't be displayed!!</h2>
+    {{else}}
+    <h2>This will be displayed because the "address" property does not exists!!</h2>
+    {{/if}}
+
+    {{#unless address}}
+    <h3>WARNING: We can't find the address!</h3>
+    {{/unless}} --}}
+
+    {{!-- <ul>
+        <li>Friedrichshain</li>
+        <li>Kreuzberg</li>
+        <li>Neukoelln</li>
+        <li>Charlottenburg</li>
+        <li>Prenzlauer Berg</li>
+        <li>Marzahn</li>
+    </ul> --}}
+
+<ul>
+    {{#each cities}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+    <ul>
+        {{#each cities}}
+        <li>{{this}}</li>
+        {{else}}
+        <p>No cities yet!</p>
+        {{/each}}
+    </ul>
+
+    <ul>
+        {{#each areas}}
+        <li>{{@index}}: {{this}}</li>
+        {{/each}}
+    </ul>
+
+    <ul>
+        {{#each cities}}
+        {{#if @first}}
+        <li><b>{{this}},</b></li>
+        {{else if @last}}
+        <li><i>{{this}}.</i></li>
+        {{else}}
+        <li>{{this}},</li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</body>
+
+</html>
