@@ -1,3 +1,15 @@
-<h1>Areas</h1>
+{{!-- <div class="container">
+    <h1>Players</h1>
+    <div class="row">
+        {{> playerCard}}
+    </div>
+</div> --}}
 
-
+<div class="container">
+    <h1>areas</h1>
+    <div class="row">
+        {{#each area}}
+        {{> this.card }}
+        {{/each}}
+    </div>
+</div>
