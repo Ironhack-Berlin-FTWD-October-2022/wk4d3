@@ -1,0 +1,78 @@
+So we are going to talk about route parameters.
+
+We should know by now that every time we navigate to a URL we are making a get request to our server.  Today we'll be looking at two techniques for delivering data to our server using the GET request.
+
+Route parameters are used to capture the specific values at specific positions in the URL.
+
+Parameters are not just about routing but about how we interact with the data which is on the page.
+
+The obtained values are populated in the req.params object, with the name of the route parameter specified in the path as their respective keys
+
+So this maybe doesn't make so much sense at the moment, but we'll see what we mean in a minute.
+
+********************************
+We can think of what comes after the colon: as a variable, meaning that we are expecting to pass some value to it, and it will have a certain name, so you have to pay attention that this name will be used.
+
+so look, we've got a request happening here in which we're saying we want to target the url in /users route, which we are dictating from our app.js. 
+
+***Example route in app.js.....send request and navigate to localhost/users/whatever*******
+
+You'll notice that we're not accessing the next bit like we usually would, but we're using a colon.  A colon when we're dealing with express basically signals route parameters rather than a 'view' endpoint like we might be used to.
+
+So we get that in our console if we look at req.params, and we can see it in our endpoint if we're sending it to the page.
+
+Notice again that the response we get back is an object, where the key is whatever we've put in our url.
+
+**********show second example route.
+
+////////////////////////////////////////////
+
+But what if we need more than one parameter sent.  In these cases we can do something like this:
+
+********** next example.
+
+If we then go to: http://localhost:3000/users/ironhack/books/8989
+
+we see that we get an object with two key-value pairs.  Brilliant
+
+we can keep adding these all day if we want!!
+
+*********Look at example of website.  github??
+
+we can see that it follows a pattern of 'collection of many things' then '/single item - with identifier'
+////////////////////////////////////////////
+
+So all of this exists in a bit of a weird space just now.
+
+We have the theory in place of being able to signal to express that we're dealing with params but it might be difficult to put it in our real world context.
+
+Remember last week we had the lesson where we talked about the structure of a URL, where we pointed to the protocol we're using, the host etc, and then mentioned very briefly what it usually means when we see a question mark in there.
+
+So this is going to be the key to understanding query parameters.
+
+Let's look at our code again.  Before we were dealing with request.parameters, which mean that from the request object, we were seeing what parameters were being passed.  What if there's something else being passed?
+
+We've got a new route which says "search", we can  think of this quite literally.
+
+The endpoint here looks slightly different than before, as we are no longer dealing with req.params but with req.search.  We are now dealing with req.query.  
+
+It's important to mention that we're mostly dealing with searches and filters when we talk about queries, and it makes sense sort of when we're looking at our URL again. Question Mark etc.
+
+What happens with this route? Let's look:
+
+    ***Demonstrate with http://localhost:3000/search?city=Barcelona
+
+As you can see, we get an object like before, but this time with the result of our query params.
+
+////////////////////
+
+Why is this important?
+
+Imagine you have a perfect search for flights, want to share with a friend
+
+URL has all parameters already there.
+
+
+
+
+
