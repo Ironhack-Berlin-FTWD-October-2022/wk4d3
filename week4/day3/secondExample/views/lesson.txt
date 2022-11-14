@@ -61,3 +61,6 @@ Then we can go ahead and use it in our ______ view file.
 
 But that doesn't do so much for us, or at least I should say that we can do much much more than just have a static piece of code that we can insert different places.
 
+So let's not have it as just static, let's make it dynamic.
+
+We already know from the Ironbeers lab that we can insert code dynamically.  Let's give that a try

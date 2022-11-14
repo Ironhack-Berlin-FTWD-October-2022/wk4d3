@@ -7,9 +7,10 @@ const app = express();
 app.use(express.static("public"));
 
 // our first Route:
-app.get("/home", (request, response, next) =>
-  response.sendFile(__dirname + "/views/homepage.html")
-);
+app.get("/home", (request, response, next) => {
+  console.log(__dirname);
+  response.sendFile(__dirname + "/views/homepage.html");
+});
 
 // cat route:
 app.get("/cat", (request, response, next) =>

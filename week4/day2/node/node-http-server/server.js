@@ -6,9 +6,8 @@ const http = require("http");
 
 const server = http.createServer((request, response) => {
   console.log(`Someone has requested ${request.url}`);
-
   if (request.url === "/") {
-    response.write("Hello, world!");
+    response.write(``);
     response.end();
   } else if (request.url === "/about") {
     response.write("My name is Daniel");

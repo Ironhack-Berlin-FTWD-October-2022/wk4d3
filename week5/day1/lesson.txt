@@ -1,0 +1,84 @@
+When we were talking about our http verbs before, we discussed our GET POST PUT and DELETE.
+
+Now we'll talk a bit about the POST method.  We know already what it's doing but let's make sure we have our definition and our theory crystal clear:
+
+When we are POSTing something, we are not trying to get something from the server, but sending it to the server.  I think the example used was about instagram - if we are posting an image, we are sending it to the server, and therefore using a post request to update our database.
+
+So there's a few things we need to consider.
+
+****Do recap of earlier lesson, query params and show form with GET method.
+
+****Look at new form with POST method.
+
+We've got a new form going on here.  this time, we're taking in slightly different data.  If you look up at our method, we're no longer dealing with a GET request, we're dealing with a POST request.  and what happens if we input our data and press enter?
+
+We get an error just now because we haven't set anything up in the backend, but if we look at our METHODS in the NETWORK tab, we see that we have indeed made a POST request.
+
+And importantly, we aren't doing anything with the URL now.  nothing changed in our URL bar.  And this is sort of the key to understanding how our POST method works.
+
+///////////////////////////////////////////
+
+So let's go back to our get method for a moment, and think about what's happening again.
+
+Let's change our form to a get request again and then move into our backend.
+
+We're able to access our req.query like so.
+
+What happened? Our form took all of our input fields and added them as query parameters. Brilliant!
+
+That means we can then access that data on the route that is receiving the request on the server.
+
+But what happens when we have sensitive information that we don’t want to be displayed in the URL bar, or easily manipulated by the user?
+
+That's one case for bringing in POST
+
+////////////////////////////////////////////
+
+So, what if we set up a route following the same pattern that we had with our GET requests.
+
+it stands to reason that we should have to use the format of the
+
+    -form action,
+    -route.
+    -etc
+
+that we've seen before with our GET method.
+
+but what happens when we try this?
+
+lets try to get the body or params of the request first in our console.
+
+    ***console.log(req.body)  // console.log(req.params)
+
+we get undefined, and an empty object respectively.
+
+How about when we look in our network tab?  Looks like we are making the request, but it is pending.  And when do we usually see this word pending?
+
+/////////////////////////////////////////////
+
+So why aren't we getting anything?
+
+The data that we get in our request isn't readable by default in Express with a POST request, so we need to use a package!
+
+Luckily though, this is included with express, so we don't have to npm i anything...
+
+we need to require it, and then let the app know you'll be using it.
+
+This next bit is just what we use to do this, we won't go over the ins and outs of what's happening as it's quite complex and won't change in our code, but feel free to look it up.
+
+so then if we make our request, we get a result!  we can see it in the console, and even res.send to our page with a post request.
+
+What the body parser has done is turned this data into a plain old JS object, which we can then work with.
+
+
+
+
+
+
+
+
+
+
+
+
+
